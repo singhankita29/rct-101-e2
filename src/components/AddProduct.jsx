@@ -1,18 +1,60 @@
 import React from "react";
+import { Button, } from '@chakra-ui/react'
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+} from '@chakra-ui/react'
+import { Input } from '@chakra-ui/react'
+import { Select } from '@chakra-ui/react'
+
 
 const AddProduct = () => {
   // TODO: Remove below const and instead import them from chakra
-  const Button = () => <div />;
-  const Modal = () => <div />;
-  const ModalBody = () => <div />;
-  const Input = () => <div />;
-  const Select = () => <div />;
+<Button colorScheme='teal' size='sm'>
+    Button
+  </Button> 
+ function BasicUsage() {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  return (
+    <>
+      <Button onClick={onOpen}>Open Modal</Button>
+
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Modal Title</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Lorem count={2} />
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme='blue' mr={3} onClick={onClose}>
+              Close
+            </Button>
+            <Button variant='ghost'>Secondary Action</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
+  )
+}
+
+<Input htmlSize={4} width='auto' />
+
+
+
   const RadioGroup = () => <div />;
   const Radio = () => <div />;
 
   return (
     <>
-      <Button my={4} data-cy="add-product-button"></Button>
+      <Button my={4} data-cy="add-product-button">Add Pro</Button>
       <Modal>
         <ModalBody pb={6}>
           <Input data-cy="add-product-title" />
